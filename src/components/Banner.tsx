@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import classNames from "classnames";
 import data from "../quizConfig.json";
+import hand from '../hand.svg';
 
 export const StartBanner: React.FC = () => {
     const dispatch = useDispatch()
@@ -30,7 +31,8 @@ export const StartBanner: React.FC = () => {
             'hide': !allowAnimation,
         })}>
             <div className='banner_content remove-scrollbar'>
-                <img src="" alt="hand"/>
+                <img src={hand} alt="hand"/>
+                {/*<img src={logo} className="App-logo" alt="logo" />*/}
                 <div className='banner_info'    >
                     <p>Who wants to be a millionaire?</p>
 
@@ -74,7 +76,7 @@ export const EndBanner: React.FC = () => {
             'hide': gameStatus !== 'END',
         })}>
             <div className='banner_content remove-scrollbar'>
-                <img src="/hand.svg" alt="hand"/>
+                <img src={hand} alt="hand"/>
                 <div className='banner_info'>
                     <span>Total score:</span>
                     <p>{questions[quizIndex]?.reward || '$0'} earned</p>
