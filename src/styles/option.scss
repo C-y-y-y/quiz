@@ -1,0 +1,77 @@
+
+.option {
+  --stripe: 17px;
+
+  position: relative;
+  font-size: 0.625rem;
+  padding: 0 17px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: $gray-dark;
+  }
+
+  &_cell {
+    z-index: 0;
+    position: relative;
+    padding: clamp(20px, 0.75rem, 0.75rem) clamp(24px, 1rem, 1rem);
+    cursor: pointer;
+
+    @media ($ms) {
+      box-sizing: border-box;
+      max-width: 290px;
+      margin: 0 auto;
+    }
+  }
+
+  &_letter {
+    margin-right: 8px;
+    color: $orange;
+    font-weight: 600;
+  }
+
+  svg {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &.active {
+    &:before {
+      background-color: $orange;
+    }
+    path {
+      stroke: $orange;
+      fill: $orange-light
+    }
+  }
+
+
+  &.correct {
+    &:before {
+      background-color: $green;
+    }
+    path {
+      stroke: $green;
+      fill: $green-light
+    }
+  }
+  &.wrong {
+    &:before {
+      background-color: $red;
+    }
+    path {
+      stroke: $red;
+      fill: $red-light
+    }
+  }
+}

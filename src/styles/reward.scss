@@ -1,0 +1,58 @@
+
+.reward {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: clamp(14px, 0.625rem, 0.625rem);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 1px;
+    width: 100%;
+    background-color: $gray-dark;
+  }
+
+  &_cell {
+    z-index: 0;
+    position: relative;
+    padding: 8px 24px;
+    width: 240px;
+    box-sizing: border-box;
+    text-align: center;
+
+    @media ($min-xl) {
+      padding: 0.25rem 0.75rem;
+      width: 50%;
+    }
+
+    svg {
+      z-index: -1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &.passed {
+    opacity: .5;
+  }
+
+  &.current {
+    color: $orange;
+
+    &:before {
+      background-color: $orange;
+    }
+
+    path {
+      stroke: $orange;
+    }
+  }
+}
