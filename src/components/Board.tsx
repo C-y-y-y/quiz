@@ -12,7 +12,6 @@ export const Board: React.FC = () => {
     const currentStage = data.quizQuestions[stage]
     const rewards = data?.quizQuestions?.reduce((acc: string[], question: {reward: string}) => [question.reward, ...acc], [])
 
-    console.log(currentStage?.correctAnswer)
     return (
         <div className={classNames({
             'board': true,

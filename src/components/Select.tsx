@@ -39,7 +39,7 @@ export const Select = ({currentStage}: {currentStage: Stage}) => {
 
     useEffect(() => {
         let timeout: NodeJS.Timeout
-        console.log(stage)
+
         if (answer.status) {
             timeout = setTimeout(() => {
                 if (answer.status === 'wrong' || (answer.status === 'correct' && stage === 0)) {
