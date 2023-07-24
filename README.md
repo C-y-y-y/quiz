@@ -2,6 +2,8 @@
 
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
+[DEMO PAGE](https://c-y-y-y.github.io/quiz/)
+
 ## Clone the repository:
 ```sh
 git clone https://github.com/C-y-y-y/quiz.git
